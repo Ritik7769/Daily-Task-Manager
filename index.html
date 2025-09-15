@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+      <div class="header">
+          <h1>📝 Daily Task Manager</h1>
+          <p>Apne daily tasks ko organize karein aur productive rahiye!</p>
+      </div>
+
+      <div class="stats-container">
+          <div class="stat-card">
+              <h3 id="totalTasks">0</h3>
+              <p>Total Tasks</p>
+          </div>
+          <div class="stat-card">
+              <h3 id="completedTasks">0</h3>
+              <p>Completed</p>
+          </div>
+          <div class="stat-card">
+              <h3 id="pendingTasks">0</h3>
+              <p>Pending</p>
+          </div>
+      </div>
+
+      <div class="input-section">
+          <div class="input-group">
+              <input type="text" class="task-input" id="taskInput" placeholder="Naya task add kariye..." maxlength="100">
+              <select class="priority-select" id="prioritySelect">
+                  <option value="low">Low Priority</option>
+                  <option value="medium" selected>Medium Priority</option>
+                  <option value="high">High Priority</option>
+              </select>
+              <button class="add-btn" onclick="addTask()">Add Task</button>
+          </div>
+      </div>
+
+      <div class="filters">
+          <button class="filter-btn active" onclick="filterTasks('all')">All Tasks</button>
+          <button class="filter-btn" onclick="filterTasks('pending')">Pending</button>
+          <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
+          <button class="filter-btn" onclick="filterTasks('high')">High Priority</button>
+      </div>
+
+      <div class="tasks-container" id="tasksContainer">
+          <div class="empty-state" id="emptyState">
+              <p>🎯 Abhi tak koi task add nahi kiya gaya hai!</p>
+              <p>Upar se apna pehla task add kariye.</p>
+          </div>
+      </div>
+
+      <button class="clear-all-btn" onclick="clearAllTasks()" id="clearAllBtn" style="display: none;">
+          Clear All Completed Tasks
+      </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
